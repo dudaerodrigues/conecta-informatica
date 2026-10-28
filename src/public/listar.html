@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta Informática - Produtos</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+    <h1>Estoque - Conecta Informática</h1>
+
+    <p class="mensagem" id="mensagem" role="status"></p>
+
+    <a href="/produtos/novo" class="botao botao-novo">
+        + Cadastrar Novo Produto
+    </a>
+
+    <br><br>
+
+    <!-- Busca por identificador -->
+    <form id="form-busca">
+        <label for="idProduto">Buscar por ID:</label>
+
+        <input type="number" id="idProduto" name="idProduto" placeholder="Ex: 1" min="1">
+
+        <button type="submit" class="botao">
+            Buscar
+        </button>
+
+        <a href="/produtos" class="limpar">Limpar</a>
+    </form>
+
+    <!-- Tabela de produtos -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-produtos">
+            <!-- Linhas inseridas com os dados retornados pelo servidor. -->
+        </tbody>
+    </table>
+    <script src="/js/listar.js" defer></script>
+</body>
+</html>
