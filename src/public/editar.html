@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto - Conecta Informática</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 18px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button,
+        .cancelar {
+            flex: 1;
+            padding: 11px;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .cancelar {
+            background-color: #6c757d;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .cancelar:hover {
+            background-color: #545b62;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="titulo">Editar Produto</h1>
+        <p id="mensagem" role="alert"></p>
+        <form id="form-editar" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required maxlength="100">
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" maxlength="255">
+            <label for="categoria">Categoria:</label>
+            <input type="text" id="categoria" name="categoria" required maxlength="50">
+            <label for="preco">Preço (R$):</label>
+            <input type="number" id="preco" name="preco" step="0.01" min="0.01" required>
+            <label for="quantidade">Quantidade em estoque:</label>
+            <input type="number" id="quantidade" name="quantidade" min="0" step="1" required>
+            <div class="botoes">
+                <button type="submit">Salvar Alterações</button>
+                <a href="/produtos" class="cancelar">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+    <script src="/js/editar.js" defer></script>
+</body>
+</html>

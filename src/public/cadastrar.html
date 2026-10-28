@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Produto - Conecta Informática</title>
+</head>
+<body>
+    <h1>Cadastrar Novo Produto</h1>
+    
+    <form action="/produtos/novo" method="POST">
+        <label>Nome:</label><br>
+        <input type="text" name="nome" placeholder="Ex: Mouse USB" required maxlength="100"><br><br>
+
+        <label>Descrição:</label><br>
+        <input type="text" name="descricao" placeholder="Ex: Mouse óptico com conexão USB" maxlength="255"><br><br>
+
+        <label>Categoria:</label><br>
+        <input type="text" name="categoria" placeholder="Ex: Periféricos" required maxlength="50"><br><br>
+
+        <label>Preço:</label><br>
+        <input type="number" name="preco" step="0.01" min="0.01" placeholder="Ex: 45.90" required><br><br>
+
+        <label>Quantidade em estoque:</label><br>
+        <input type="number" name="quantidade" min="0" step="1" placeholder="Ex: 10" required><br><br>
+
+        <button type="submit">Cadastrar Produto</button>
+        <a href="/produtos">Cancelar</a>
+    </form>
+</body>
+</html>
